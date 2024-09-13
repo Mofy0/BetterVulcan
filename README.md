@@ -1,4 +1,4 @@
-###BetterVulcan
+<p style="font-size: 56px;">BetterVulcan</p>
 
 ##What is the Purpose of the Application?
 
