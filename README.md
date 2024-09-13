@@ -2,7 +2,7 @@
 
 <h4><b>What is the Purpose of the Application?</b></h4>
 
-The purpose of the application is to create a “Better ” Vulcan, which is currently in a tragic state.
+The purpose of the application is to create a “Better ” Vulcan, which is currently in a really bad situation.
 
 <h4><b>How does it work?</b></h4>
 
