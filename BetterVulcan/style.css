@@ -1,0 +1,23 @@
+.Loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  z-index: 1000; /* Ensure the loader is on top */
+}
+
+.Loader.fadeout {
+  opacity: 0;
+}
+
+#LoadingGif {
+  width: 128px;
+  height: 128px;
+}
