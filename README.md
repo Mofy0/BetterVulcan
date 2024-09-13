@@ -1,6 +1,6 @@
-<p style="font-size: 1.5em"><B>BetterVulcan</B></p>
+<h1>BetterVulcan</h1>
 
-<h2>What is the Purpose of the Application?</h2>
+<h4><b>What is the Purpose of the Application?</b></h4>
 
 #The purpose of the application is to create a “Better ” Vulcan, which is currently in a tragic state.
 
