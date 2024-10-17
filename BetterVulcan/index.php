@@ -43,12 +43,6 @@
     if (isset($_GET['error'])) {
         echo "<p style='color: red;'>Invalid username or password</p>";
     }
-
-    $password = "Uczen1";  // Replace with the actual password
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    
-    echo $hash;
-
     ?>
 </body>
 </html>
