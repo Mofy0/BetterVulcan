@@ -8,8 +8,10 @@
 </head>
 <body>
     <div class="Loader">
-        <img src="src/loadingAnimation.gif" alt="loading" id="LoadingGif">
+        <div class="loader"></div>
     </div>
+
+    <!-- Loading Scrypt -->
     <script>
       window.onload = function() {
         setTimeout(function() {
@@ -21,28 +23,25 @@
         }, 10);
       };
     </script>
-    <form action="login.php" method="post">
-      <label for="username">Username:</label>
+    <div className="desktop">
+<div id="loginBlock" >
+    <!-- User logo login -->
+    <img src="src/UserLoginLogo.png" alt="User Logo" id="UserLogo">
+    <!-- Form for login -->
+    <form action="login.php" method="post" class="LoginFrom">
+      <label for="username">Username:</label> <br>
       <input type="text" id="username" name="username" required><br>
-
-      <label for="password">Password:</label>
+      <label for="password">Password:</label> <Br>
       <input type="password" id="password" name="password" required><br>
-
-      <label for="role">Role:</label>
+      <label for="role">Role:</label> <br> 
       <select id="role" name="role" required>
           <option value="students">Student</option>
           <option value="teachers">Teacher</option>
           <option value="admins">Admin</option>
       </select><br>
-
       <input type="submit" value="Login">
     </form>
+</div>
 
-    <!-- Display error message if exists -->
-    <?php
-    if (isset($_GET['error'])) {
-        echo "<p style='color: red;'>Invalid username or password</p>";
-    }
-    ?>
 </body>
 </html>
