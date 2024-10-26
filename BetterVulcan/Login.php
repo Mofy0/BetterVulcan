@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: index.php?error=Invalid%20role%20selected");
         exit();
     }
-
+        
     // Determine the table based on the role
     $table = "";
     switch ($role) {
