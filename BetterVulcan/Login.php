@@ -21,15 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // Validate the role
-    $valid_roles = ['students', 'teachers', 'admins'];
+    $valid_roles = ['students', 'teachers', 'admins']; // Wszystkie role jakie sa dowzwolone 
     if (!in_array($role, $valid_roles)) {
         header("Location: index.php?error=Invalid%20role%20selected");
         exit();
     }
-        
+
     // Determine the table based on the role
-    $table = "";
+    $table = ""; // zmienna do przechowywania jaka tabela ma byc uzyta
     switch ($role) {
         case 'students':
             $table = "students";
@@ -45,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
     }
 
-    // Prepare and execute the query
     $stmt = $conn->prepare("SELECT * FROM $table WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -53,31 +51,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        // Verify the password
         if (password_verify($password, $row['password'])) {
-            // Set session variables and redirect based on role
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
             echo $role;
             switch ($role) {
                 case 'students':
-                    header("Location: Php\student_dashboard.php");
+                    header("Location: Student\student_dashboard.php");
                     break;
                 case 'teachers':
-                    header("Location: teacher_dashboard.php");
+                    header("Location: Teacher/teacher_dashboard.php");
                     break;
                 case 'admins':
-                    header("Location: admin_dashboard.php");
+                    header("Location: Admin/admin_dashboard.php");
                     break;
             }
             exit();
         } else {
-            // Invalid password
             echo "Invalid password";
             exit();
         }
     } else {
-        // No user found with that username
+        // Niem ma takiego uzytkownika
         header("Location: index.php");
         exit();
     }
