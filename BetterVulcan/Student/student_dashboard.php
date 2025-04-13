@@ -2,13 +2,17 @@
 session_start();
 include 'db_connect.php';
 
-
+if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'students') {
+    header("Location: ../index.php");
+    exit();
+}
 $student = $conn->query("
     SELECT students.*, classes.name AS class_name 
     FROM students 
     JOIN classes ON students.class_id = classes.id 
     WHERE students.username = '{$_SESSION['username']}'
 ")->fetch_assoc();
+
 
 $subjects = $conn->query("
     SELECT DISTINCT subjects.id, subjects.name 
@@ -83,15 +87,16 @@ while ($grade = $gradesQuery->fetch_assoc()) {
             item.addEventListener('click', function() {
                 const subjectId = this.getAttribute('data-subject-id');
                 
+
                 document.querySelectorAll('.subject-grades').forEach(grades => {
                     grades.style.display = 'none';
                 });
                 
+
                 document.querySelector(`.subject-grades[data-subject-id="${subjectId}"]`).style.display = 'block';
             });
         });
 
-        // Pokaz pierwszy przedmiot na starcie
         document.querySelector('.subject-list li:first-child')?.click();
     </script>
 </body>
