@@ -1,36 +1,71 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    min-height: 100vh;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(80, 120, 255, 0.10), 0 1.5px 6px rgba(0,0,0,0.04);
 }
 
 .left-panel {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 32px;
 }
 
 .left-panel h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 600;
     margin-bottom: 10px;
+    color: #4d7cff;
+}
+
+.left-panel .class-info {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.subject-list {
+    background: #f7f9fc;
+    border-radius: 12px;
+    padding: 18px 0;
+    box-shadow: 0 2px 8px rgba(80, 120, 255, 0.06);
+}
+
+.subject-list button,
+.subject-list .subject {
+    display: block;
+    width: 90%;
+    margin: 0 auto 10px auto;
+    padding: 12px 18px;
+    background: #f4f6fa;
+    border: 1.5px solid #dbe2ef;
+    border-radius: 7px;
+    color: #222;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+
+.subject-list button:hover,
+.subject-list .subject.active {
+    background: #4d7cff;
+    color: #fff;
+    border: 1.5px solid #4d7cff;
 }
 
 .right-panel {
@@ -41,8 +76,27 @@ body {
 }
 
 .right-panel h2 {
-    font-size: 18px;
+    font-size: 1.3rem;
+    font-weight: 600;
     margin-bottom: 20px;
+    color: #222;
+}
+
+.grades-row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.grade-box {
+    background: #e3eafc;
+    color: #4d7cff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 18px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(80, 120, 255, 0.06);
+    text-align: center;
 }
 
 .grade-form {
@@ -50,41 +104,51 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 18px;
 }
 
 .grade-form label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #222;
 }
 
 .grade-form select,
 .grade-form input[type="number"] {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 14px;
+    padding: 10px 12px;
+    border: 1.5px solid #dbe2ef;
+    border-radius: 7px;
+    background: #f7f9fc;
+    color: #222;
+    font-size: 15px;
+    transition: border 0.2s;
+}
+
+.grade-form select:focus,
+.grade-form input[type="number"]:focus {
+    border: 1.5px solid #4d7cff;
+    outline: none;
 }
 
 .grade-form select option {
-    background: #2a5298;
-    color: #fff;
+    background: #fff;
+    color: #222;
 }
 
 .grade-form button {
-    padding: 10px;
+    padding: 11px;
     border: none;
-    border-radius: 5px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 7px;
+    background: #4d7cff;
     color: #fff;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.2s;
 }
 
 .grade-form button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    background: #3461c1;
 }

@@ -7,27 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="Loader">
-        <img src="src/loadingAnimation.gif" alt="loading" id="LoadingGif">
-    </div>
-    <script>
-      window.onload = function() {
-        setTimeout(function() {
-          const loader = document.querySelector('.Loader');
-          loader.classList.add('fadeout');
-          loader.addEventListener('transitionend', function() {
-            loader.style.display = 'none';
-          });
-        }, 10);
-      };
-    </script>
-    <div id="login" style="width: 30%; margin: 40px auto;">
+    <div id="login" style="width: 20%; margin: 40px auto;">
+    <img src="person.svg" alt="logo">
     <form action="login.php" method="post">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br>
+      <input type="text" id="username" name="username" required > </input><br>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
+      <input type="password" id="password" name="password" required ><br>
 
       <label for="role">Role:</label>
       <select id="role" name="role" required>
